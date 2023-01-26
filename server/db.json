@@ -1,0 +1,127 @@
+{
+  "documents1": [
+    {
+      "id": "1",
+      "name": "Продукт 1",
+      "quantity": 35,
+      "deliveryDate": "2023-01-25",
+      "price": 220,
+      "currency": "USD"
+    },
+    {
+      "id": "2",
+      "name": "Продукт 2",
+      "quantity": 12,
+      "deliveryDate": "2023-01-22",
+      "price": 150,
+      "currency": "RUB"
+    },
+    {
+      "id": "3",
+      "name": "Продукт 3",
+      "quantity": 24,
+      "deliveryDate": "2023-02-04",
+      "price": 300,
+      "currency": "USD"
+    },
+    {
+      "id": "4",
+      "name": "Продукт 4",
+      "quantity": 7,
+      "deliveryDate": "2023-01-03",
+      "price": 50,
+      "currency": "RUB"
+    },
+    {
+      "id": "5",
+      "name": "Продукт 5",
+      "quantity": 86,
+      "deliveryDate": "2023-03-28",
+      "price": 1000,
+      "currency": "USD"
+    }
+  ],
+  "documents2": [
+    {
+      "id": "1",
+      "name": "Продукт 6",
+      "quantity": 19,
+      "deliveryDate": "2023-05-10",
+      "price": 350,
+      "currency": "RUB"
+    },
+    {
+      "id": "2",
+      "name": "Продукт 7",
+      "quantity": 67,
+      "deliveryDate": "2023-03-25",
+      "price": 100,
+      "currency": "USD"
+    },
+    {
+      "id": "3",
+      "name": "Продукт 8",
+      "quantity": 92,
+      "deliveryDate": "2023-02-27",
+      "price": 200,
+      "currency": "RUB"
+    },
+    {
+      "id": "4",
+      "name": "Продукт 9",
+      "quantity": 125,
+      "deliveryDate": "2023-03-26",
+      "price": 100,
+      "currency": "USD"
+    },
+    {
+      "id": "5",
+      "name": "Продукт 10",
+      "quantity": 39,
+      "deliveryDate": "2023-04-21",
+      "price": 530,
+      "currency": "USD"
+    },
+    {
+      "id": "6",
+      "name": "Продукт 11",
+      "quantity": 90,
+      "deliveryDate": "2023-05-07",
+      "price": 120,
+      "currency": "RUB"
+    },
+    {
+      "id": "7",
+      "name": "Продукт 12",
+      "quantity": 16,
+      "deliveryDate": "2023-01-23",
+      "price": 100,
+      "currency": "USD"
+    },
+    {
+      "id": "8",
+      "name": "Продукт 13",
+      "quantity": 28,
+      "deliveryDate": "2023-01-13",
+      "price": 300,
+      "currency": "RUB"
+    },
+    {
+      "id": "9",
+      "name": "Продукт 14",
+      "quantity": 48,
+      "deliveryDate": "2023-02-22",
+      "price": 210,
+      "currency": "USD"
+    },
+    {
+      "id": "10",
+      "name": "Продукт 15",
+      "quantity": 43,
+      "deliveryDate": "2023-02-18",
+      "price": 100,
+      "currency": "USD"
+    }
+  ],
+  "cancel": []
+}

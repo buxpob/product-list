@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "PT Sans", sans-serif;
+}
+
+html {
+  height: 100%;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: normal;
+  background-color: #F4F5F9;
+}
+
+body {
+  position: relative;
+  min-width: 320px;
+  max-width: 1920px;
+  min-height: 100%;
+  margin: 0 auto;
+  overflow-y: scroll;
+  overflow-y: overlay;
+}
