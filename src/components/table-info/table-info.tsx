@@ -2,7 +2,7 @@ import { useAppSelector } from '../../hooks';
 import LoadingComponent from '../loading/loading';
 import { Typography, Table, InputRef, Button, Input, Space } from 'antd';
 import { Product, DataIndex, CurrentProduct } from '../../types/types';
-import { useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { SearchOutlined } from '@ant-design/icons';
 import type { ColumnsType, ColumnType } from 'antd/es/table';
 import type { FilterConfirmProps, TableRowSelection } from 'antd/es/table/interface';
@@ -21,11 +21,11 @@ export default function TableInfoComponent(): JSX.Element {
   const [ searchedColumn, setSearchedColumn ] = useState('');
   const searchInput = useRef<InputRef>(null);
 
-  const data = products.map((item) => ({...item, key: `${item.document}${item.id}`}));
+  const data = products.map((item) => ({ ...item, key: `${item.document}${item.id}` }));
 
   const onSelectChange = (newSelectedRowKeys: React.Key[]) => {
     const arrayCurrentProduct: CurrentProduct[] = [];
-    let totalQuantityProduct: number = 0;
+    let totalQuantityProduct = 0;
 
     if (newSelectedRowKeys.length > 0) {
       newSelectedRowKeys.forEach((product: React.Key) => {        
@@ -38,7 +38,7 @@ export default function TableInfoComponent(): JSX.Element {
           });
           totalQuantityProduct += currentProduct.quantity;
         }        
-      })
+      });
     } 
 
     store.dispatch(setSelectedProductList(arrayCurrentProduct));
@@ -62,7 +62,7 @@ export default function TableInfoComponent(): JSX.Element {
   };
 
   const getColumnSearchProps = (dataIndex: DataIndex): ColumnType<Product> => ({
-    filterDropdown: ({ setSelectedKeys, selectedKeys, confirm, clearFilters, close }) => (
+    filterDropdown: ({ setSelectedKeys, selectedKeys, confirm, close }) => (
       <div style={{ padding: 8 }} onKeyDown={(e) => e.stopPropagation()}>
         <Input
           ref={searchInput}
@@ -181,4 +181,4 @@ export default function TableInfoComponent(): JSX.Element {
           />      
     </section>
   );
-};
+}

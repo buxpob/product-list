@@ -29,26 +29,26 @@ export const fetchDocumentsAction = createAsyncThunk<void, undefined, {
     const documentList = [
       ...adaptProductsToClient(firstProductList.data, '1'),
       ...adaptProductsToClient(secondProductList.data, '2'),
-    ]
+    ];
 
     dispatch(setDataLoadedStatus(true));
     dispatch(loadProductList(documentList));
     dispatch(setDataLoadedStatus(false));
   });
 
-  export const addIdProductListAction = createAsyncThunk<void, CurrentProduct[], {
-    dispatch: AppDispatch,
-    state: State,
-    extra: AxiosInstance
-  }>(
-    'addProducts',
-    async (_arg, {extra: api, getState }) => {
-      const { selectedProductList } = getState();
-      const selectedIdProductDocumentOne = selectedProductList.filter((product: CurrentProduct) => product.document === '1').map((product: CurrentProduct) => product.id);
+export const addIdProductListAction = createAsyncThunk<void, CurrentProduct[], {
+  dispatch: AppDispatch,
+  state: State,
+  extra: AxiosInstance
+}>(
+  'addProducts',
+  async (_arg, { extra: api, getState }) => {
+    const { selectedProductList } = getState();
+    const selectedIdProductDocumentOne = selectedProductList.filter((product: CurrentProduct) => product.document === '1').map((product: CurrentProduct) => product.id);
 
-      const selectedIdProductDocumentTwo = selectedProductList.filter((product: CurrentProduct) => product.document === '2').map((product: CurrentProduct) => product.id);
+    const selectedIdProductDocumentTwo = selectedProductList.filter((product: CurrentProduct) => product.document === '2').map((product: CurrentProduct) => product.id);
 
-      await api.post<SelectedProducts[]>(`${BACKEND_URL}${APIRoute.Cancel}`, 
+    await api.post<SelectedProducts[]>(`${BACKEND_URL}${APIRoute.Cancel}`, 
       [
         {
           document: '1',
@@ -57,8 +57,8 @@ export const fetchDocumentsAction = createAsyncThunk<void, undefined, {
         {
           document: '2',
           productsId: selectedIdProductDocumentTwo,
-        }
-      ]
-      );
-    },
-  );
+        },
+      ],
+    );
+  },
+);

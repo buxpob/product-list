@@ -8,7 +8,7 @@ type InitialState = {
   error: string | null;
   totalQuantity: number;
   selectedProductList: CurrentProduct[];
-}
+};
 
 const initialState: InitialState = {
   products: [],

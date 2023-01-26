@@ -11,7 +11,7 @@ import './css/index.css';
 store.dispatch(fetchDocumentsAction());
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById('root') as HTMLElement,
 );
 root.render(
   <React.StrictMode>
@@ -22,5 +22,5 @@ root.render(
       <App />
 
     </Provider>
-  </React.StrictMode>
+  </React.StrictMode>,
 );

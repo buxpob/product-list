@@ -1,16 +1,17 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Button, Modal } from 'antd';
 import { useAppSelector } from '../../hooks';
 import { store } from '../../store';
 import { addIdProductListAction } from '../../store/api-actions';
 import './modal.css';
+import { CurrentProduct } from '../../types/types';
 
 export default function ModalComponent(): JSX.Element {
   const { selectedProductList } = useAppSelector((state) => state);
   const [ isModalOpen, setIsModalOpen ] = useState(false);
 
   const showModal = () => {
-      setIsModalOpen(true);
+    setIsModalOpen(true);
   };
 
   const handleOk = () => {
@@ -37,7 +38,7 @@ export default function ModalComponent(): JSX.Element {
         okText='Применить'
         cancelText='Отклонить'
       >
-        <p>{selectedProductList.map((product) => product.name).join(', ')}</p>
+        <p>{selectedProductList.map((product: CurrentProduct) => product.name).join(', ')}</p>
       </Modal> :
       <Modal title='Выберите продукт'
         open={isModalOpen}
@@ -48,4 +49,4 @@ export default function ModalComponent(): JSX.Element {
     }
     </>
   );
-};
+}
