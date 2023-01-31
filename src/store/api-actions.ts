@@ -17,22 +17,18 @@ export const clearErrorAction = createAsyncThunk(
   },
 );
 
-export const fetchDocumentsAction = createAsyncThunk<void, undefined, {
+export const fetchDocumentsAction = createAsyncThunk<void, { URL: string, numberDoc: string }, {
   dispatch: AppDispatch,
   state: State,
   extra: AxiosInstance,
 }>(
   'fetchContacts',
-  async (_arg, { dispatch, extra: api }) => {
-    const firstProductList = await api.get<Product[]>(`${BACKEND_URL}${APIRoute.Documents1}`);
-    const secondProductList = await api.get<Product[]>(`${BACKEND_URL}${APIRoute.Documents2}`);
-    const documentList = [
-      ...adaptProductsToClient(firstProductList.data, '1'),
-      ...adaptProductsToClient(secondProductList.data, '2'),
-    ];
+  async ({ URL, numberDoc }, { dispatch, extra: api, getState }) => {
+    const productList = await api.get<Product[]>(`${BACKEND_URL}${URL}`);
+    const { products } = getState();
 
     dispatch(setDataLoadedStatus(true));
-    dispatch(loadProductList(documentList));
+    dispatch(loadProductList([...products, ...adaptProductsToClient(productList.data, numberDoc)]));
     dispatch(setDataLoadedStatus(false));
   });
 
